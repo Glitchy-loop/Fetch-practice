@@ -1,0 +1,28 @@
+body {
+    background-color: #1d1d1d;
+    color:#fff;
+
+    .content {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .filterBar {
+            display:flex;
+            justify-content: center;
+            width: 50%;
+            height:3rem;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+            
+            td {
+                border:1px solid #fff;
+            }
+        }
+    }
+}

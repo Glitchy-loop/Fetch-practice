@@ -1,0 +1,42 @@
+body {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+body .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .content .filterBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  height: 3rem;
+}
+
+body .content table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+body .content table td {
+  border: 1px solid #fff;
+}
+/*# sourceMappingURL=style.css.map */
