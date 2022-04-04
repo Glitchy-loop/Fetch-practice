@@ -1,5 +1,7 @@
 let url = 'http://167.172.42.239:1337/api/movies'
 const table = document.querySelector('tbody')
+const searchBar = document.getElementById('search')
+
 // Get data from the server
 
 const getData = url => {
@@ -7,11 +9,11 @@ const getData = url => {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        // console.log(data)
         displayMovies(data.data)
         sortByYear(data.data)
         sortByName(data.data)
         sortByRating(data.data)
+        moviesIn(data.data)
       })
   } catch (err) {
     console.log(err.message)
@@ -39,8 +41,6 @@ const displayMovies = data => {
 }
 
 // Search
-
-const searchBar = document.getElementById('search')
 
 searchBar.addEventListener('keyup', e => {
   let searchQuery = e.target.value
@@ -88,5 +88,27 @@ const sortByRating = data => {
         b.attributes.IMDbRating > a.attributes.IMDbRating ? 1 : -1
       ))
     )
+  })
+}
+
+// Movie
+
+const moviesIn = data => {
+  const trs = document.querySelectorAll('tbody tr')
+
+  trs.forEach(tr => {
+    tr.addEventListener('click', e => {
+      const movieTitle = e.target.parentNode.children[0].textContent
+
+      filteredData = data.filter(item => {
+        return item.attributes.title.toLowerCase() === movieTitle.toLowerCase()
+      })
+
+      let title = filteredData.map(item => item.attributes.title)
+
+      localStorage.setItem('MovieTitle', title)
+
+      window.location.replace('http://127.0.0.1:5500/view.html')
+    })
   })
 }

@@ -17,6 +17,7 @@ body .content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 2rem;
 }
 
 body .content .filterBar {
@@ -27,16 +28,41 @@ body .content .filterBar {
       -ms-flex-pack: center;
           justify-content: center;
   width: 50%;
-  height: 3rem;
+  height: 2rem;
+  padding-bottom: 2rem;
 }
 
 body .content table {
-  width: 100%;
+  width: 90%;
   text-align: center;
   border-collapse: collapse;
 }
 
 body .content table td {
-  border: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+body .content table td:not(:last-child) {
+  border-right: 1px solid #fff;
+}
+
+body .content table tr {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+body .content table tr:not(:first-child):hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  height: 5rem;
+  cursor: pointer;
+}
+
+body .content table tr:nth-child(even) {
+  background-color: #3b3b3b;
+}
+
+.view tbody tr {
+  height: 5rem;
 }
 /*# sourceMappingURL=style.css.map */
